@@ -5,6 +5,8 @@ public class CUSTOMER
     private char ticketid;
     private int numoftickets;
     private char method;
+    private float methodtotal;
+    private float charitytotal;
     public CUSTOMER()
     {
         // initialise instance variables
@@ -12,6 +14,8 @@ public class CUSTOMER
         ticketid = 0;
         numoftickets = 0;
         method = 0;
+        methodtotal = 0.0f;
+        charitytotal = 0.0f;
     }
     public void readCustomerDetails(String dataItems)
     {
@@ -30,9 +34,17 @@ public class CUSTOMER
         String customerData = "";
         customerData = customerData.concat(customerid);
         customerData = customerData.concat(",");
-        customerData = customerData;
+        customerData = customerData.concat(Character.toString(ticketid));
         customerData = customerData.concat(",");
         customerData = customerData.concat(Integer.toString(numoftickets));
+        customerData = customerData.concat(",");
+        customerData = customerData.concat(Character.toString(method));
+        return customerData;
+    }
+    public float getTotal()
+    {
+        return methodtotal;
+        return charitytotal;
     }
         
 }
