@@ -41,10 +41,9 @@ public class CUSTOMER
         customerData = customerData.concat(Character.toString(method));
         return customerData;
     }
-    public float getTotal()
-    {
-        return methodtotal;
-        return charitytotal;
+  public char getmethod()
+  {
+      return method;
     }
         
 }
