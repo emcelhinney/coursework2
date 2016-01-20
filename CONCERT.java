@@ -53,7 +53,7 @@ public class CONCERT
 
     public void countmethod()
     { 
-        
+
         System.out.print("A report of the method used most by customers");
         // start the count
         int countS = 0;
@@ -91,7 +91,20 @@ public class CONCERT
 
     public void counttotal()
     {
-        //placeholder
+            //start count
+        float total = 0.00f;
+        for(int i = 0; i < noOfCustomers; i++)
+        {
+            if (customerList[i].getnight() == 'F')
+            {
+                total = total + customerList[i].getnumOftickets()*10;
+            }	
+            else 
+            {
+                total = total + customerList[i].getnumOftickets()*5;
+            }
+        }
+        System.out.print("total money raised for charity:$" + total );
     }
 
     public void savefridaynightfile()
