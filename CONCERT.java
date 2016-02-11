@@ -8,6 +8,7 @@ public class CONCERT
     // number of customers to be calculated after reading file
     int noOfCustomers;
     FILEREADCSV customerfile;
+    FILEWRITECSV ResultFile;
 
     public CONCERT()
     {
@@ -107,9 +108,27 @@ public class CONCERT
         System.out.print("total money raised for charity:$" + total );
     }
 
-    public void savefridaynightfile()
+    public void savefridaynightfile() throws IOException
+   
     {
-        //placeholder
+        String fileContent = "";
+        int count =0;
+        for (int i = 0; i < noOfCustomers; i++)
+        {
+            if(customerList[i].getnight() == 'F' )
+            {
+                count = count +1;
+                if (count>1)
+                {
+                    fileContent = fileContent.concat("\n");
+                }
+                fileContent = fileContent.concat(customerList[i].writeDetails());
+            }
+            System.out.println("**preparing to write Friday night file**");
+            ResultFile.writeCSVtable(fileContent);
+            System.out.println("**File written and closed**");
+        }
+        
     }
 }
 
