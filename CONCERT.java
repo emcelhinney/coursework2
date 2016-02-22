@@ -14,6 +14,7 @@ public class CONCERT
     {
         // initialise instance variables
         customerfile = new FILEREADCSV();
+        ResultFile = new FILEWRITECSV();
 
     }
 
@@ -124,10 +125,11 @@ public class CONCERT
                 }
                 fileContent = fileContent.concat(customerList[i].writeDetails());
             }
-            System.out.println("**preparing to write Friday night file**");
+          
+        }
+           System.out.println("**preparing to write Friday night file**");
             ResultFile.writeCSVtable(fileContent);
             System.out.println("**File written and closed**");
-        }
         
     }
 }

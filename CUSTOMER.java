@@ -6,6 +6,7 @@ public class CUSTOMER
     private int numoftickets;
     private char method;
     public float total;
+    private String seatsection;
     
     public CUSTOMER()
     {
@@ -26,6 +27,7 @@ public class CUSTOMER
         ticketid = (rowItems[1]).charAt(0);
         numoftickets = Integer.parseInt(rowItems[2]);
         method = (rowItems[3]).charAt(0);
+        seatsection = rowItems[1];
     }
     public String writeDetails()
     {
@@ -34,7 +36,7 @@ public class CUSTOMER
         String customerData = "";
         customerData = customerData.concat(customerid);
         customerData = customerData.concat(",");
-        customerData = customerData.concat(Character.toString(ticketid));
+        customerData = customerData.concat(seatsection);
         customerData = customerData.concat(",");
         customerData = customerData.concat(Integer.toString(numoftickets));
         customerData = customerData.concat(",");
